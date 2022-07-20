@@ -1,5 +1,5 @@
 {
-  "name": "cfx-api",
+  "name": "@PABLO-1610/cfx-api",
   "version": "1.0.0-alpha.1",
   "descrption": "JS library to interact with the Cfx.re API",
   "main": "src/index.js",
