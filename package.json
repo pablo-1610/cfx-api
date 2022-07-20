@@ -1,6 +1,6 @@
 {
-  "name": "@PABLO-1610/cfx-api",
-  "version": "1.0.0-alpha.1",
+  "name": "cfx-api",
+  "version": "1.0.0-alpha.2",
   "descrption": "JS library to interact with the Cfx.re API",
   "main": "src/index.js",
   "author": "Pablo Zapata <pablo.zapata.dev@gmail.com>",
@@ -23,11 +23,14 @@
   "engines": {
     "node": ">=16.9.0"
   },
+  "scripts": {
+    "lint": "eslint src"
+  },
   "license": "Apache-2.0",
   "dependencies": {
     "axios": "^0.27.2"
   },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/@PABLO-1610"
+  "devDependencies": {
+    "eslint": "^8.17.0"
   }
 }
