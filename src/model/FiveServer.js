@@ -29,177 +29,199 @@ class FiveServer {
 
     /***
      * Get the number of connected players
-     * @return {number} Number of players
+     * @type {number} Number of players
+     * @readonly
      */
-    getPlayersCount() {
+    get playersCount() {
         return this.data["clients"];
     }
 
     /***
      * Get the players list
-     * @return {Array<FivePlayer>} List of players
+     * @type {Array<FivePlayer>} List of players
+     * @readonly
      */
-    getPlayers() {
+    get players() {
         return this.data["players"];
     }
 
     /***
      * Get game type
-     * @return {string} Game type
+     * @type {string} Game type
+     * @readonly
      */
-    getGameType() {
+    get gameType() {
         return this.data["gametype"];
     }
 
     /***
      * Get the server's hostname
-     * @return {string} Server's hostname
+     * @type {string} Server's hostname
+     * @readonly
      */
-    getHostName() {
+    get hostname() {
         return this.data["hostname"];
     }
 
     /***
      * Get the server's current map
-     * @return {string} Server's current map
+     * @type {string} Server's current map
+     * @readonly
      */
-    getMapName() {
+    get mapName() {
         return this.data["mapname"];
     }
 
     /***
      * Get the server's max players
-     * @return {number} Server's max players
+     * @type {number} Server's max players
+     * @readonly
      */
-    getMaxPlayers() {
+    get maxPlayers() {
         return this.data["sv_maxclients"];
     }
 
     /***
      * Is the server enhanced host support
-     * @return {boolean} True if server has enhanced host support
+     * @type {boolean} True if server has enhanced host support
+     * @readonly
      */
-    isEnhancedHostSupport() {
+    get enhancedHostSupport() {
         return this.data["enhancedHostSupport"];
     }
 
     /***
      * Get the server's list of active resources
-     * @return {Array<String>} List of active resources
+     * @type {Array<String>} List of active resources
+     * @readonly
      */
-    getResources() {
+    get resources() {
         return this.data["resources"]
     }
 
     /***
      * Get the server's FXServer version
-     * @return {String} FXServer version
+     * @type {String} FXServer version
+     * @readonly
      */
-    getServerVersion() {
+    get serverVersion() {
         return this.data["server"]
     }
 
     /***
      * Get the server's public variables
-     * @return {Object} Public variables
+     * @type {Object} Public variables
+     * @readonly
      */
-    getPublicVariables() {
+    get publicVariables() {
         return this.data["vars"]
     }
 
     /***
      * Get the server's players count from the last server report
-     * @return {number} Server's players count
+     * @type {number} Server's players count
+     * @readonly
      */
-    getPlayersCountFromServerReport() {
+    get playersCountFromServerReport() {
         return this.data["selfReportedClients"];
     }
 
     /***
      * Get the server's owner id
-     * @return {number} Server's owner id
+     * @type {number} Server's owner id
+     * @readonly
      */
-    getOwnerId() {
+    get ownerId() {
         return this.data["ownerID"];
     }
 
     /***
      * Get is the server is password protected
-     * @return {boolean} True if server is password protected
+     * @type {boolean} True if server is password protected
+     * @readonly
      */
-    isPrivate() {
+    get private() {
         return this.data["private"];
     }
 
     /***
      * Get is the server fallbabk
-     * @return {boolean} True if server is fallback
+     * @type {boolean} True if server is fallback
+     * @readonly
      */
-    isFallback() {
+    get fallback() {
         return this.data["fallback"]
     }
 
     /***
      * Get the server's connect endpoints
-     * @return {Array<String>} Server's connect endpoints
+     * @type {Array<String>} Server's connect endpoints
+     * @readonly
      */
-    getConnectedEndpoints() {
+    get connectedEndpoints() {
         return this.data["connectEndPoints"];
     }
 
     /***
      * Get the server's upvote power
-     * @return {number} Server's upvote power
+     * @type {number} Server's upvote power
+     * @readonly
      */
-    getUpvotePower() {
+    get upvotePower() {
         return this.data["upvotePower"];
     }
 
     /***
      * Get the server's burst power
-     * @return {number} Server's burst power
+     * @type {number} Server's burst power
+     * @readonly
      */
-    getBurstPower() {
+    get burstPower() {
         return this.data["burstPower"];
     }
 
     /***
      * Get is the server supported
-     * @return {string} "supported" if server is supported
+     * @type {string} "supported" if server is supported
+     * @readonly
      */
-    isSupported() {
+    get supported() {
         return this.data["support_status"]
     }
 
     /***
      * Get the server's owner name
-     * @returns {string} Server's owner name
+     * @type {string} Server's owner name
+     * @readonly
      */
-    getOwnerName() {
+    get ownerName() {
         return this.data["ownerName"];
     }
 
     /***
      * Get the server's owner cfx profile url
-     * @returns {string} Server's owner cfx profile url
+     * @type {string} Server's owner cfx profile url
+     * @readonly
      */
-    getOwnerProfileUrl() {
+    get ownerProfileUrl() {
         return this.data["ownerProfile"];
     }
 
     /***
      * Get the server's owner avatar url
-     * @returns {string} Server's owner avatar url
+     * @type {string} Server's owner avatar url
+     * @readonly
      */
-    getOwnerAvatarUrl() {
+    get ownerAvatarUrl() {
         return this.data["ownerAvatar"];
     }
 
     /***
      * Get the server's last seen date
-     * @returns {string} Server's last seen date
+     * @type {string} Server's last seen date
+     * @readonly
      */
-    getLastSeenDate() {
+    get lastSeenDate() {
         return this.data["lastSeen"];
     }
 
@@ -207,7 +229,7 @@ class FiveServer {
      * Get the server's icon version
      * @returns {number} Server's icon version
      */
-    getIconVersion() {
+    get iconVersion() {
         return this.data["iconVersion"];
     }
 }
