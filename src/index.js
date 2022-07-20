@@ -17,7 +17,7 @@ async function retrieveFive(id) {
   try {
     const response = await axios.get(endpoint + id, axiosConfig);
     if (response.status !== 200) {
-      new Error('Server not found');
+      new Error('Server not found or internal error occurred');
     }
     return new FiveServer(response.data);
   } catch (error) {
