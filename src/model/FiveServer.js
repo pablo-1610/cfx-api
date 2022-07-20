@@ -1,5 +1,3 @@
-const FivePlayer = require("./FivePlayer");
-
 /***
  * Class representing a FiveM server
  * @class
@@ -27,10 +25,6 @@ class FiveServer {
          * @public
          */
         this.data = Data;
-
-        this.data.players.forEach(player => {
-            player = new FivePlayer(player);
-        })
     }
 
     /***
