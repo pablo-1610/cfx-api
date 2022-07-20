@@ -1,5 +1,5 @@
 {
-  "name": "cfxre-api",
+  "name": "cfx-api",
   "version": "1.0.0",
   "descrption": "JS library to interact with the Cfx.re API",
   "main": "src/index.js",
@@ -9,15 +9,16 @@
     "api",
     "node",
     "fivem-api",
-    "cfxre",
-    "cfxre-api"
+    "cfx",
+    "cfx-api",
+    "cfx.re"
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/PABLO-1610/cfxre-api.git"
+    "url": "git+https://github.com/PABLO-1610/cfx-api.git"
   },
   "bugs": {
-    "url": "https://github.com/PABLO-1610/cfxre-api/issues"
+    "url": "https://github.com/PABLO-1610/cfx-api/issues"
   },
   "engines": {
     "node": ">=16.9.0"
