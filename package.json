@@ -23,8 +23,15 @@
   "engines": {
     "node": ">=16.9.0"
   },
+  "scripts": {
+    "lint": "eslint src/**/*.js"
+  },
   "license": "Apache-2.0",
   "dependencies": {
     "axios": "^0.27.2"
+  },
+  "devDependencies": {
+    "eslint": "^8.20.0",
+    "eslint-config-google": "^0.14.0"
   }
 }
