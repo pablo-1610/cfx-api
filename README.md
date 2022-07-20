@@ -6,13 +6,13 @@ A package that helps you interacting with the Cfx.re API to fetch FiveM servers
 **How to install**
 
 ```bash
-npm i cfxre-api
+npm i cfx-api
 ```
 
 **How to use**:
 
 ```js
-const cfx = require("cfxre-api");
+const cfx = require("cfx-api");
 
 const server = cfx.retrieveFive("v45z95").then(server => { // Replace v45z95 with a server id
     console.log(server.getHostName())
