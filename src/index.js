@@ -4,7 +4,7 @@ const endpoint = 'https://servers-frontend.fivem.net/api/servers/single/';
 
 const axiosConfig = {
   headers: {
-    'User-Agent': 'cfxre-api',
+    'User-Agent': 'cfx-api',
   },
 };
 
