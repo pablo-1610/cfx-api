@@ -12,14 +12,7 @@ npm i cfx-api
 **How to use**:
 
 ```js
-const cfx = require("cfx-api");
+const cfx = require("cfxre-api");
 
-const server = cfx.retrieveFive("v45z95").then(server => { // Replace v45z95 with a server id
-    console.log(server.getHostName())
-
-    console.log(server.getOwnerProfileUrl())
-
-    server.getPlayers().forEach(player => {
-         console.log(player.name)
-    })
-})
+const server = await cfx.retrieveFive("v48z95"); // Replace v48z95 with any FiveM server id
+console.log(server.hostname);
