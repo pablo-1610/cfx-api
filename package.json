@@ -1,0 +1,26 @@
+{
+  "name": "cfxre-api",
+  "version": "0.1.0",
+  "descrption": "JS library to interact with the Cfx.re API",
+  "main": "src/index.js",
+  "author": "Pablo Zapata <pablo.zapata.dev@gmail.com>",
+  "keywords": [
+    "fivem",
+    "api",
+    "node",
+    "fivem-api",
+    "cfxre",
+    "cfxre-api"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PABLO-1610/cfxre-api.git"
+  },
+  "bugs": {
+    "url": "https://github.com/PABLO-1610/cfxre-api/issues"
+  },
+  "engines": {
+    "node": ">=16.9.0"
+  },
+  "license": "Apache-2.0"
+}
