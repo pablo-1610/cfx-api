@@ -1,6 +1,6 @@
 {
   "name": "cfx-api",
-  "version": "1.0.0",
+  "version": "1.0.0-alpha.1",
   "descrption": "JS library to interact with the Cfx.re API",
   "main": "src/index.js",
   "author": "Pablo Zapata <pablo.zapata.dev@gmail.com>",
@@ -28,6 +28,6 @@
     "axios": "^0.27.2"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
+    "registry": "https://npm.pkg.github.com/@PABLO-1610"
   }
 }
