@@ -227,7 +227,8 @@ class FiveServer {
 
     /***
      * Get the server's icon version
-     * @returns {number} Server's icon version
+     * @type {number} Server's icon version
+     * @readonly
      */
     get iconVersion() {
         return this.data["iconVersion"];
