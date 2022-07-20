@@ -233,6 +233,26 @@ class FiveServer {
   get iconVersion() {
     return this.data['iconVersion'];
   }
+
+  /** *
+   * Get if the server has the specified resource
+   * @param {string} resource Resource to check
+   * @return {boolean} True if server has the specified resource
+   * @readonly
+   */
+  hasResource(resource) {
+    return this.resources.includes(resource);
+  }
+
+  /** *
+   * Get if the server has any resource starting with the specified string
+   * @param {string} resource Resource to check
+   * @return {boolean} True if server has any resource starting with the specified string
+   * @readonly
+   */
+  hasAnyResourceStartingWith(resource) {
+    return this.resources.some((r) => r.startsWith(resource));
+  }
 }
 
 module.exports = FiveServer;
