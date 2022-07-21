@@ -4,6 +4,9 @@
   "descrption": "JS library to interact with the Cfx.re API",
   "main": "src/index.js",
   "author": "Pablo Zapata <pablo.zapata.dev@gmail.com>",
+  "scripts": {
+    "lint": "eslint src"
+  },
   "keywords": [
     "fivem",
     "api",
@@ -15,18 +18,12 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/PABLO-1610/cfx-api.git"
+    "url": "git@github.com:PABLO-1610/cfx-api.git"
   },
   "bugs": {
     "url": "https://github.com/PABLO-1610/cfx-api/issues"
   },
-  "engines": {
-    "node": ">=16.9.0"
-  },
-  "scripts": {
-    "lint": "eslint src"
-  },
-  "license": "Apache-2.0",
+  "license": "ISC",
   "dependencies": {
     "axios": "^0.27.2"
   },
