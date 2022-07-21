@@ -20,7 +20,6 @@ const cfx = require("cfx-api");
 (async () => {
   // Retrieve a CitizenFX server (could be a FiveM or a RedM server)
   const server = await cfx.fetchServer("qrbm5v") // Replace "qrpm7v" with a server id
-
   console.log(`Server: ${server.hostname} has ${server.players.length} players online`);
 
   // Retrieve Cfx.re status
@@ -29,7 +28,6 @@ const cfx = require("cfx-api");
 
   // And get status of all individual components
   const components = await status.fetchComponents()
-  for (let component of components) {
+  for (let component of components)
     console.log(`${component.name}: ${component.status}`);
-  }
 })();
