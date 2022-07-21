@@ -1,8 +1,8 @@
-<img align="right" src="https://user-images.githubusercontent.com/42814853/180027603-514401ba-d6bb-425a-892c-0bc50bf38310.png" height=20% width=20%>
-
 # Cfx.re JavaScript API
 
-A package that helps you interacting with the Cfx.re API to fetch CitizenServerModule servers
+A package that helps you interacting with the Cfx.re, FiveM & RedM API.
+
+<img align="right" src="https://user-images.githubusercontent.com/42814853/180027603-514401ba-d6bb-425a-892c-0bc50bf38310.png" height=20% width=20%>
 
 <hr>
 
