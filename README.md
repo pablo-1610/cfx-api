@@ -1,7 +1,10 @@
 <img align="right" src="https://user-images.githubusercontent.com/42814853/180027603-514401ba-d6bb-425a-892c-0bc50bf38310.png" height=20% width=20%>
 
 # Cfx.re JavaScript API
-A package that helps you interacting with the Cfx.re API to fetch FiveM servers
+
+A package that helps you interacting with the Cfx.re API to fetch CitizenServerModule servers
+
+<hr>
 
 **How to install**
 
@@ -9,10 +12,24 @@ A package that helps you interacting with the Cfx.re API to fetch FiveM servers
 npm i cfx-api
 ```
 
-**How to use**:
+**Example usage**:
 
 ```js
 const cfx = require("cfx-api");
 
-const server = await cfx.retrieveFive("v48z95"); // Replace v48z95 with any FiveM server id
-console.log(server.hostname);
+(async () => {
+  // Retrieve a CitizenFX server (could be a FiveM or a RedM server)
+  const server = await cfx.fetchServer("qrpm7v")
+
+  console.log(`Server: ${server.hostname} has ${server.players.length} players online`);
+
+  // Retrieve Cfx.re status
+  const status = await cfx.fetchStatus()
+  console.log(status.everythingOk ? "All Cfx.re systems are operational" : "Cfx.re is experiencing issues");
+
+  // And get status of all individual components
+  const components = await status.fetchComponents()
+  for (let component of components) {
+    console.log(`${component.name}: ${component.status}`);
+  }
+})();
