@@ -1,6 +1,6 @@
 {
   "name": "cfx-api",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "descrption": "JS library to interact with the Cfx.re API",
   "main": "src/index.js",
   "author": "Pablo Zapata <pablo.zapata.dev@gmail.com>",
