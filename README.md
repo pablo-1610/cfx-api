@@ -19,7 +19,7 @@ const cfx = require("cfx-api");
 
 (async () => {
   // Retrieve a CitizenFX server (could be a FiveM or a RedM server)
-  const server = await cfx.fetchServer("qrpm7v")
+  const server = await cfx.fetchServer("qrbm5v") // Replace "qrpm7v" with a server id
 
   console.log(`Server: ${server.hostname} has ${server.players.length} players online`);
 
