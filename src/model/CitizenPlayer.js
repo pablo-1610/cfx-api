@@ -1,10 +1,10 @@
 /** *
- * Class representing a FiveM player
+ * Class representing a CitizenFX player
  * @class
  * @constructor
  * @public
  */
-class FivePlayer {
+class CitizenPlayer {
   /** *
    * Constructor for class
    * @param {Object} payload Data from API
@@ -49,4 +49,4 @@ class FivePlayer {
   }
 }
 
-module.exports = FivePlayer;
+module.exports = CitizenPlayer;
