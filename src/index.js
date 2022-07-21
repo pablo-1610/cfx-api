@@ -1,30 +1,24 @@
-const axios = require('axios');
-const FiveServer = require('./model/FiveServer');
-const endpoint = 'https://servers-frontend.fivem.net/api/servers/single/';
-
-const axiosConfig = {
-  headers: {
-    'User-Agent': 'cfx-api',
-  },
-};
+const CitizenServerModule = require('./modules/CitizenServer.module');
+const CfxStatusModule = require('./modules/CfxStatus.module');
 
 /** *
- * Retrieve a FiveM server
+ * Retrieve a CitizenFX server
  * @param {string} id Server ID
- * @return {Promise<FiveServer>}
+ * @return {Promise<CitizenServer>}
  */
-async function retrieveFive(id) {
-  try {
-    const response = await axios.get(endpoint + id, axiosConfig);
-    if (response.status !== 200) {
-      new Error('Server not found or internal error occurred');
-    }
-    return new FiveServer(response.data);
-  } catch (error) {
-    console.log('Error: ' + error);
-  }
+async function fetchServer(id) {
+  return await CitizenServerModule.get().retrieve(id);
+}
+
+/** *
+ * Retrieve Cfx.re status
+ * @return {Promise<CfxStatus>}
+ */
+async function fetchStatus() {
+  return await CfxStatusModule.get().retrieve();
 }
 
 module.exports = {
-  retrieveFive,
+  fetchServer,
+  fetchStatus,
 };
