@@ -11,30 +11,13 @@ class StatusComponent {
    */
   constructor(data) {
     /* eslint-disable */
-    const {
-      id,
-      name,
-      status,
-      created_at,
-      updated_at,
-      position,
-      description,
-      showcase,
-      start_date,
-      group_id,
-      page_id,
-      group,
-      only_show_if_degraded
-    } = data;
-    /* eslint-enable */
-
     /** *
      * component id
      * @type {string}
      * @public
      * @readonly
      */
-    this.id = id;
+    this.id = data.id;
 
     /** *
      * component name
@@ -42,7 +25,7 @@ class StatusComponent {
      * @public
      * @readonly
      */
-    this.name = name;
+    this.name = data.name;
 
     /** *
      * component status
@@ -50,7 +33,7 @@ class StatusComponent {
      * @public
      * @readonly
      */
-    this.status = status;
+    this.status = data.status;
 
     /* eslint-disable */
     /** *
@@ -59,7 +42,7 @@ class StatusComponent {
      * @public
      * @readonly
      */
-    this.createdAt = created_at;
+    this.createdAt = data.created_at;
 
     /** *
      * component date of last update
@@ -67,7 +50,7 @@ class StatusComponent {
      * @public
      * @readonly
      */
-    this.updatedAt = updated_at;
+    this.updatedAt = data.updated_at;
 
     /** *
      * component position
@@ -75,7 +58,7 @@ class StatusComponent {
      * @public
      * @readonly
      */
-    this.position = position;
+    this.position = data.position;
 
     /** *
      * component description
@@ -83,7 +66,7 @@ class StatusComponent {
      * @public
      * @readonly
      */
-    this.description = description;
+    this.description = data.description;
 
     /** *
      * component showcase
@@ -91,7 +74,7 @@ class StatusComponent {
      * @public
      * @readonly
      */
-    this.showcase = showcase;
+    this.showcase = data.showcase;
 
     /** *
      * component start date
@@ -99,7 +82,7 @@ class StatusComponent {
      * @public
      * @readonly
      */
-    this.startDate = start_date;
+    this.startDate = data.start_date;
 
     /** *
      * component group id
@@ -107,7 +90,7 @@ class StatusComponent {
      * @public
      * @readonly
      */
-    this.groupId = group_id;
+    this.groupId = data.group_id;
 
     /** *
      * component page id
@@ -115,7 +98,7 @@ class StatusComponent {
      * @public
      * @readonly
      */
-    this.pageId = page_id;
+    this.pageId = data.page_id;
 
     /** *
      * component group
@@ -123,7 +106,7 @@ class StatusComponent {
      * @public
      * @readonly
      */
-    this.group = group;
+    this.group = data.group;
 
     /** *
      * component only show if degraded
@@ -131,7 +114,7 @@ class StatusComponent {
      * @public
      * @readonly
      */
-    this.onlyShowIfDegraded = only_show_if_degraded;
+    this.onlyShowIfDegraded = data.only_show_if_degraded;
     /* eslint-enable */
   }
 }
