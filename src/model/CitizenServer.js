@@ -1,16 +1,18 @@
 /** *
- * Class representing a FiveM server
+ * Class representing a CitizenFX server
  * @class
  * @constructor
  * @public
  */
-class FiveServer {
+const ElementClub = require('../enum/ElementClub');
+
+class CitizenServer {
   /** *
    * Constructor for class
-   * @param {Object} payload Data from API
+   * @param {Object} data data from API
    */
-  constructor(payload) {
-    const {EndPoint, Data} = payload;
+  constructor(data) {
+    const {EndPoint, Data} = data;
 
     /** *
      * id represents the server's cfx id
@@ -38,7 +40,7 @@ class FiveServer {
 
   /** *
    * Get the players list
-   * @type {Array<FivePlayer>} List of players
+   * @type {Array<CitizenPlayer>} List of players
    * @readonly
    */
   get players() {
@@ -235,6 +237,63 @@ class FiveServer {
   }
 
   /** *
+   * Get the server's one sync status
+   * @type {boolean} true if the server is using one sync
+   * @readonly
+   */
+  get isOneSyncEnabled() {
+    return this.publicVariables['onesync_enabled'] != null ? this.publicVariables['onesync_enabled'] === 'true' : false;
+  }
+
+  /** *
+   * Get the server's element club level
+   * @type {string} server's element club level
+   * @readonly
+   */
+  get elementClub() {
+    if (!this.publicVariables['element_club']) {
+      return ElementClub.NONE;
+    }
+    return this.publicVariables['element_club'];
+  }
+
+  /** *
+   * Get the server's tags
+   * @type {Array<string>} server's tags
+   * @readonly
+   */
+  get tags() {
+    if (!this.publicVariables['tags']) {
+      return [];
+    }
+    return this.publicVariables['tags'];
+  }
+
+  /** *
+   * server's project name
+   * @type {string} server's project name
+   * @readonly
+   */
+  get projectName() {
+    if (!this.publicVariables['sv_projectName']) {
+      return 'undefined';
+    }
+    return this.publicVariables['sv_projectName'];
+  }
+
+  /** *
+   * server's project description
+   * @type {string} server's project description
+   * @readonly
+   */
+  get projectDesc() {
+    if (!this.publicVariables['sv_projectDesc']) {
+      return 'undefined';
+    }
+    return this.publicVariables['sv_projectDesc'];
+  }
+
+  /** *
    * Get if the server has the specified resource
    * @param {string} resource Resource to check
    * @return {boolean} True if server has the specified resource
@@ -253,6 +312,15 @@ class FiveServer {
   hasAnyResourceStartingWith(resource) {
     return this.resources.some((r) => r.startsWith(resource));
   }
+
+  /** *
+   * Get if the server has the specified tag
+   * @param {string} tag tag to check
+   * @return {boolean} true if the server has the specified tag
+   */
+  hasTag(tag) {
+    return this.tags.includes(tag);
+  }
 }
 
-module.exports = FiveServer;
+module.exports = CitizenServer;
