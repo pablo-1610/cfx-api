@@ -294,6 +294,15 @@ class CitizenServer {
   }
 
   /** *
+   * Get is the server full
+   * @type {boolean} trye if server is full
+   * @readonly
+   */
+  get isFull() {
+    return this.playersCount >= this.maxPlayers;
+  }
+
+  /** *
    * Get if the server has the specified resource
    * @param {string} resource Resource to check
    * @return {boolean} True if server has the specified resource
