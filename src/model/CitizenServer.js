@@ -321,6 +321,15 @@ class CitizenServer {
   hasTag(tag) {
     return this.tags.includes(tag);
   }
+
+  /** *
+   * Get if the server has any player connected with the given name
+   * @param {string} name Player name to check
+   * @return {boolean} true if the server has any player connected with the given name
+   */
+  isPlayerOnline(name) {
+    return this.players.some((player) => player.name === name);
+  }
 }
 
 module.exports = CitizenServer;
