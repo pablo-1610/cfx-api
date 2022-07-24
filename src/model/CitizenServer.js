@@ -242,7 +242,7 @@ class CitizenServer {
    * @readonly
    */
   get isOneSyncEnabled() {
-    return this.publicVariables['onesync_enabled'] != null ? this.publicVariables['onesync_enabled'] === 'true' : false;
+    return (this.publicVariables['onesync_enabled'] === 'true') ? true : false;
   }
 
   /** *
@@ -251,10 +251,7 @@ class CitizenServer {
    * @readonly
    */
   get elementClub() {
-    if (!this.publicVariables['element_club']) {
-      return ElementClub.NONE;
-    }
-    return this.publicVariables['element_club'];
+    return this.publicVariables['element_club'] ?? ElementClub.NONE
   }
 
   /** *
@@ -275,10 +272,7 @@ class CitizenServer {
    * @readonly
    */
   get projectName() {
-    if (!this.publicVariables['sv_projectName']) {
-      return 'undefined';
-    }
-    return this.publicVariables['sv_projectName'];
+    return this.publicVariables['sv_projectName'] ?? undefined;
   }
 
   /** *
@@ -287,10 +281,7 @@ class CitizenServer {
    * @readonly
    */
   get projectDesc() {
-    if (!this.publicVariables['sv_projectDesc']) {
-      return 'undefined';
-    }
-    return this.publicVariables['sv_projectDesc'];
+    return this.publicVariables['sv_projectDesc'] ?? undefined;
   }
 
   /** *
