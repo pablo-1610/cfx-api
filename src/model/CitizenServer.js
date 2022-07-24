@@ -251,7 +251,7 @@ class CitizenServer {
    * @readonly
    */
   get elementClub() {
-    return this.publicVariables['element_club'] ?? ElementClub.NONE
+    return this.publicVariables['element_club'] ?? ElementClub.NONE;
   }
 
   /** *
