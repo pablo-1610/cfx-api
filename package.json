@@ -28,6 +28,6 @@
     "axios": "^0.27.2"
   },
   "devDependencies": {
-    "eslint": "^8.17.0"
+    "eslint": "^8.21.0"
   }
 }
