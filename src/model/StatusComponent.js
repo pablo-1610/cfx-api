@@ -11,6 +11,8 @@ class StatusComponent {
    */
   constructor(data) {
     /* eslint-disable */
+    if (!data || Object.keys(data).length === 0)
+        throw new Error("Data is empty.")
     /** *
      * component id
      * @type {string}
