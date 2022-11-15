@@ -17,7 +17,7 @@ class CitizenServerModule {
     try {
       const response = await axios.get(CfxEndpoints.CFX_MASTERLIST + id, AxiosConfig);
       if (response.status !== 200) {
-        new Error('Server not found or internal error occurred');
+        throw new Error('Server not found or internal error occurred');
       }
       return new CitizenServer(response.data);
     } catch (error) {

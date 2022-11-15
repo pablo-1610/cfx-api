@@ -17,7 +17,7 @@ class CfxStatusModule {
     try {
       const response = await axios.get(CfxEndpoints.CFX_STATUS_SUMMARY, AxiosConfig);
       if (response.status !== 200) {
-        new Error('Error while retrieving Cfx.re status');
+        throw new Error('Error while retrieving Cfx.re status');
       }
       return new CfxStatus(response.data);
     } catch (error) {
