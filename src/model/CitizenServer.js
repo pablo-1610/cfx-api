@@ -14,7 +14,10 @@ class CitizenServer {
   constructor(data) {
     const {EndPoint, Data} = data;
 
-    /** *
+    if (!EndPoint || !Data)
+        throw new Error("Data is empty whereas it's supposed to contain EndPoint and Data keys.");
+
+     /** *
      * id represents the server's cfx id
      * @type {string}
      * @public
