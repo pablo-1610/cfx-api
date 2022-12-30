@@ -1,6 +1,6 @@
 const AxiosConfig = {
   headers: {
-    'User-Agent': 'cfx-api',
+    'User-Agent': 'cfx',
   },
 };
 
