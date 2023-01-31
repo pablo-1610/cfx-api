@@ -20,7 +20,16 @@ async function fetchStatus() {
   return await CfxStatusModule.get().retrieve();
 }
 
+/**
+ * Retrieve all unresolved CfX.re incidents
+ * @return {Promise<JSON>}
+ */
+async function fetchUnresolvedIncidents() {
+  return await CfxStatusModule.get().retrieveUnresolvedIncidents();
+}
+
 module.exports = {
   fetchServer,
   fetchStatus,
+  fetchUnresolvedIncidents,
 };

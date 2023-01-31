@@ -24,6 +24,18 @@ class CfxStatusModule {
       console.log('Error: ' + error);
     }
   }
+
+  async retrieveUnresolvedIncidents() {
+    try {
+      const response = await axios.get(CfxEndpoints.CFX_STATUS_UNRESOLVED_INCIDENTS, AxiosConfig);
+      if (response.status !== 200) {
+        throw new Error('Error while retrieving Cfx.re status');
+      }
+      return response.data.incidents;
+    } catch (error) {
+      console.log('Error: ' + error);
+    }
+  }
 }
 
 module.exports = CfxStatusModule;
