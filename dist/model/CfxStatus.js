@@ -16,10 +16,12 @@ class CfxStatus {
         return this.level === "none";
     }
     async fetchComponents() {
-        const response = await axios_1.default.get(typings_1.CFX_STATUS_COMPONENTS, typings_1.AxiosOptions);
+        const response = await axios_1.default.get(typings_1.CFX_STATUS_COMPONENTS, {
+            headers: { "User-Agent": "cfx" },
+        });
         if (response.status !== 200)
             throw new Error("Cannot retrieve Cfx.re components status");
-        return response.data["components"];
+        return response.data.components;
     }
 }
 exports.default = CfxStatus;

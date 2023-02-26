@@ -14,7 +14,9 @@ class CfxCitizenServerModule {
         return this.instance;
     }
     async retrieve(id) {
-        const response = await axios_1.default.get(typings_1.CFX_MASTERLIST + id, typings_1.AxiosOptions);
+        const response = await axios_1.default.get(typings_1.CFX_MASTERLIST + id, {
+            headers: { "User-Agent": "cfx" },
+        });
         if (response.status !== 200)
             throw new Error("Server not found or internal error occurred");
         return new CfxCitizenServer_1.default(response.data);

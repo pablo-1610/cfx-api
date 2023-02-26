@@ -14,7 +14,9 @@ class CfxStatusModule {
         return this.instance;
     }
     async retrieve() {
-        const response = await axios_1.default.get(typings_1.CFX_STATUS_SUMMARY, typings_1.AxiosOptions);
+        const response = await axios_1.default.get(typings_1.CFX_STATUS_SUMMARY, {
+            headers: { "User-Agent": "cfx" },
+        });
         if (response.status !== 200)
             throw new Error("Error while retrieving Cfx.re status");
         return new CfxStatus_1.default(response.data);

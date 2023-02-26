@@ -9,91 +9,91 @@ class CitizenServer {
         this.data = data.Data;
     }
     get playersCount() {
-        return this.data["clients"];
+        return this.data.clients;
     }
     get players() {
-        return this.data["players"];
+        return this.data.players;
     }
     get gameType() {
-        return this.data["gametype"];
+        return this.data.gametype;
     }
     get hostname() {
-        return this.data["hostname"];
+        return this.data.hostname;
     }
     get mapName() {
-        return this.data["mapname"];
+        return this.data.mapname;
     }
     get maxPlayers() {
-        return this.data["sv_maxclients"];
+        return this.data.sv_maxclients;
     }
     get enhancedHostSupport() {
-        return this.data["enhancedHostSupport"];
+        return this.data.enhancedHostSupport;
     }
     get resources() {
-        return this.data["resources"];
+        return this.data.resources;
     }
     get serverVersion() {
-        return this.data["server"];
+        return this.data.server;
     }
     get publicVariables() {
-        return this.data["vars"];
+        return this.data.vars;
     }
     get playersCountFromServerReport() {
-        return this.data["selfReportedClients"];
+        return this.data.selfReportedClients;
     }
     get ownerId() {
-        return this.data["ownerID"];
+        return this.data.ownerID;
     }
     get private() {
-        return this.data["private"];
+        return this.data.private;
     }
     get fallback() {
-        return this.data["fallback"];
+        return this.data.fallback;
     }
     get connectedEndpoints() {
-        return this.data["connectEndPoints"];
+        return this.data.connectEndPoints;
     }
     get upvotePower() {
-        return this.data["upvotePower"];
+        return this.data.upvotePower;
     }
     get burstPower() {
-        return this.data["burstPower"];
+        return this.data.burstPower;
     }
     get supported() {
-        return this.data["support_status"];
+        return this.data.support_status;
     }
     get ownerName() {
-        return this.data["ownerName"];
+        return this.data.ownerName;
     }
     get ownerProfileUrl() {
-        return this.data["ownerProfile"];
+        return this.data.ownerProfile;
     }
     get ownerAvatarUrl() {
-        return this.data["ownerAvatar"];
+        return this.data.ownerAvatar;
     }
     get lastSeenDate() {
-        return this.data["lastSeen"];
+        return this.data.lastSeen;
     }
     get iconVersion() {
-        return this.data["iconVersion"];
+        return this.data.iconVersion;
     }
     get isOneSyncEnabled() {
-        return this.publicVariables["onesync_enabled"] === "true" ? true : false;
+        return this.publicVariables.onesync_enabled === "true";
     }
     get elementClub() {
-        return this.publicVariables["element_club"] ?? typings_1.NONE;
+        return this.publicVariables.element_club ?? typings_1.NONE;
     }
     get tags() {
-        if (!this.publicVariables["tags"]) {
+        if (!this.publicVariables.tags) {
             return [];
         }
-        return this.publicVariables["tags"];
+        return this.publicVariables.tags;
     }
     get projectName() {
-        return this.publicVariables["sv_projectName"] ?? undefined;
+        return this.publicVariables.sv_projectName ?? undefined;
     }
     get projectDesc() {
-        return this.publicVariables["sv_projectDesc"] ?? undefined;
+        return this.publicVariables.sv_projectDesc ?? undefined;
     }
     get isFull() {
         return this.playersCount >= this.maxPlayers;
