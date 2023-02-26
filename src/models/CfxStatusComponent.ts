@@ -1,4 +1,4 @@
-import { CfxStatusComponentData } from "../typings"
+import { CfxStatusComponentData } from "../types"
 
 export default class CfxStatusComponent {
     id: string

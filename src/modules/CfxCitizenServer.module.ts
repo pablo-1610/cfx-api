@@ -1,5 +1,5 @@
-import { CFX_MASTERLIST } from "../typings"
-import CfxCitizenServer from "../model/CfxCitizenServer"
+import { CFX_MASTERLIST } from "../types"
+import CfxCitizenServer from "../models/CfxCitizenServer"
 import axios from "axios"
 
 export default class CfxCitizenServerModule {

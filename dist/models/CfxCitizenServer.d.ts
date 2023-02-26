@@ -1,10 +1,10 @@
-import { CfxCitizenServerData, CfxCitizenServerDataData } from "../typings";
+import { CfxCitizenServerData, CfxCitizenServerDataData } from "../types";
 export default class CitizenServer {
     id: string;
     data: CfxCitizenServerDataData;
     constructor(data: CfxCitizenServerData);
     get playersCount(): number;
-    get players(): import("../typings").CfxCitizenPlayerPayload[];
+    get players(): import("../types").CfxCitizenPlayerPayload[];
     get gameType(): string;
     get hostname(): string;
     get mapName(): string;
@@ -12,7 +12,7 @@ export default class CitizenServer {
     get enhancedHostSupport(): boolean;
     get resources(): string[];
     get serverVersion(): string;
-    get publicVariables(): import("../typings").CfxCitizenServerDataPublicVariables;
+    get publicVariables(): import("../types").CfxCitizenServerDataPublicVariables;
     get playersCountFromServerReport(): number;
     get ownerId(): number;
     get private(): boolean;

@@ -1,5 +1,6 @@
 import CfxStatusModule from "./modules/CfxStatus.module"
 import CfxCitizenServerModule from "./modules/CfxCitizenServer.module"
+export * from "./types"
 
 export async function fetchServer(id: string) {
     return await CfxCitizenServerModule.get().retrieve(id)

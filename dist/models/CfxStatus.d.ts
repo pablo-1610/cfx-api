@@ -1,4 +1,4 @@
-import { CfxStatusComponentData, CfxSummary } from "../typings";
+import { CfxStatusComponentData, CfxSummary } from "../types";
 export default class CfxStatus {
     description: string;
     level: string;

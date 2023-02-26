@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const typings_1 = require("../typings");
+const types_1 = require("../types");
 const axios_1 = __importDefault(require("axios"));
 class CfxStatus {
     description;
@@ -16,7 +16,7 @@ class CfxStatus {
         return this.level === "none";
     }
     async fetchComponents() {
-        const response = await axios_1.default.get(typings_1.CFX_STATUS_COMPONENTS, {
+        const response = await axios_1.default.get(types_1.CFX_STATUS_COMPONENTS, {
             headers: { "User-Agent": "cfx" },
         });
         if (response.status !== 200)

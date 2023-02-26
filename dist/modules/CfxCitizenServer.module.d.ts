@@ -1,4 +1,4 @@
-import CfxCitizenServer from "../model/CfxCitizenServer";
+import CfxCitizenServer from "../models/CfxCitizenServer";
 export default class CfxCitizenServerModule {
     static instance: CfxCitizenServerModule | null;
     static get(): CfxCitizenServerModule;

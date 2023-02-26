@@ -1,4 +1,4 @@
-import { CfxCitizenPlayerPayload } from "../typings"
+import { CfxCitizenPlayerPayload } from "../types"
 
 export default class CfxCitizenPlayer {
     endpoint: string

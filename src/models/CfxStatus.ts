@@ -2,7 +2,7 @@ import {
     CfxStatusComponentData,
     CfxSummary,
     CFX_STATUS_COMPONENTS,
-} from "../typings"
+} from "../types"
 import axios from "axios"
 
 export default class CfxStatus {

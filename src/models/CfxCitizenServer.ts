@@ -2,7 +2,7 @@ import {
     NONE,
     CfxCitizenServerData,
     CfxCitizenServerDataData,
-} from "../typings"
+} from "../types"
 
 export default class CitizenServer {
     id: string

@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const typings_1 = require("../typings");
+const types_1 = require("../types");
 class CitizenServer {
     id;
     data;
@@ -81,7 +81,7 @@ class CitizenServer {
         return this.publicVariables.onesync_enabled === "true";
     }
     get elementClub() {
-        return this.publicVariables.element_club ?? typings_1.NONE;
+        return this.publicVariables.element_club ?? types_1.NONE;
     }
     get tags() {
         if (!this.publicVariables.tags) {

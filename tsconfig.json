@@ -12,8 +12,11 @@
     "moduleResolution": "node",
     "baseUrl": "./",
     "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "typeRoots": [
+      "src/types"
+    ]
   },
-  "include": ["src/*.ts", "src/*.d.ts", "src/**/*.ts", "src/**/*.d.ts"],
+  "include": ["src/**/*"],
   "exclude": ["node_modules", ".vscode", "dist"]
 }

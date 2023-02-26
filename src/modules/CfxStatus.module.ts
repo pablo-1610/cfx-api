@@ -1,5 +1,5 @@
-import { CFX_STATUS_SUMMARY } from "../typings"
-import CfxStatus from "../model/CfxStatus"
+import { CFX_STATUS_SUMMARY } from "../types"
+import CfxStatus from "../models/CfxStatus"
 import axios from "axios"
 
 export default class CfxStatusModule {
