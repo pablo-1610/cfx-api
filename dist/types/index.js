@@ -20,3 +20,4 @@ __exportStar(require("./CfxCitizenServer"), exports);
 __exportStar(require("./CfxElementClub"), exports);
 __exportStar(require("./CfxStatus"), exports);
 __exportStar(require("./CfxSummary"), exports);
+__exportStar(require("./CfxUnresolvedIncidents"), exports);
