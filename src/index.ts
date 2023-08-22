@@ -1,6 +1,7 @@
 import CfxStatusModule from "./modules/CfxStatus.module"
 import CfxCitizenServerModule from "./modules/CfxCitizenServer.module"
 import CfxUnresolvedIncidentsModule from "./modules/CfxUnresolvedIncidents.module"
+import CfxActiveScheduledMaintenancesModule from "./modules/CfxActiveScheduledMaintenances.module"
 export * from "./types"
 
 export async function fetchServer(id: string) {
@@ -13,4 +14,8 @@ export async function fetchStatus() {
 
 export async function fetchUnresolvedIncidents() {
     return await CfxUnresolvedIncidentsModule.get().retrieve()
+}
+
+export async function fetchActiveScheduledMaintenances() {
+    return await CfxActiveScheduledMaintenancesModule.get().retrieve()
 }
