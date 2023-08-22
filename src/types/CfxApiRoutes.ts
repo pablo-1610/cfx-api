@@ -8,3 +8,6 @@ export const CFX_STATUS_COMPONENTS =
 
 export const CFX_STATUS_UNRESOLVED =
     "https://status.cfx.re/api/v2/incidents/unresolved.json"
+
+export const CFX_STATUS_SCHEDULED_MAINTENANCES_ACTIVE = 
+    "https://status.cfx.re/api/v2/scheduled-maintenances/active.json"

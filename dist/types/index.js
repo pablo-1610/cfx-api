@@ -21,3 +21,4 @@ __exportStar(require("./CfxElementClub"), exports);
 __exportStar(require("./CfxStatus"), exports);
 __exportStar(require("./CfxSummary"), exports);
 __exportStar(require("./CfxUnresolvedIncidents"), exports);
+__exportStar(require("./CfxActiveScheduledMaintenances"), exports);
