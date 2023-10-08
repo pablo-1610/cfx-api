@@ -17,11 +17,7 @@ jobs:
           cache: npm
 
       - name: Install ESLint
-        run: npm install -g eslint
-
-
-      - name: Install ESLint plugin
-        run: npm install @typescript-eslint/eslint-plugin^5.53.0 --save-dev
+        run: npm install
 
       - name: Run ESLint
         run: npm run lint
