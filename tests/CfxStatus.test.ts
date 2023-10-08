@@ -5,10 +5,10 @@ import { fetchStatus } from "../src"
 describe("Tests for CfxStatus module", function () {
 
     test("Default behaviour of the CfxStatus.retrieve function", async function () {
-        const instance = new CfxStatusModule()
 
         try {
-            const status = await instance.retrieve()
+            const instance = new CfxStatusModule(),
+                status = await instance.retrieve()
             expect(status).toBeInstanceOf(CfxStatus)
         } catch (error) {
             // If there is a catch, it's mostly due to Cfx.re server

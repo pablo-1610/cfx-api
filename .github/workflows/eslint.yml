@@ -21,7 +21,7 @@ jobs:
 
 
       - name: Install ESLint plugin
-        run: npm install @typescript-eslint/eslint-plugin@latest --save-dev
+        run: npm install @typescript-eslint/eslint-plugin^5.53.0 --save-dev
 
       - name: Run ESLint
         run: npm run lint
