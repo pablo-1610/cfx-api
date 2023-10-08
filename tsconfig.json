@@ -14,9 +14,9 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "typeRoots": [
-      "src/types"
-    ]
+      "src/types",
+    ],
   },
   "include": ["src/**/*"],
-  "exclude": ["node_modules", ".vscode", "dist"]
+  "exclude": ["node_modules", ".vscode", "dist", "tests"]
 }
