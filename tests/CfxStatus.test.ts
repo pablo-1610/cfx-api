@@ -18,8 +18,6 @@ describe("Tests for CfxStatus module", function () {
     })
 
     test("Default behaviour of the fetchStatus function", async function () {
-        const instance = new CfxStatusModule()
-
         try {
             const status = await fetchStatus()
             expect(status).toBeInstanceOf(CfxStatus)
