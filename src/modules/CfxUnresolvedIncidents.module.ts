@@ -1,4 +1,5 @@
-import { CfxUnresolvedIncidents, CFX_STATUS_UNRESOLVED } from "../types"
+import { CFX_STATUS_UNRESOLVED } from "../types"
+import CfxUnresolvedIncidents from "../models/CfxUnresolvedIncidents"
 import axios from "axios"
 
 export default class CfxUnresolvedIncidentsModule {
@@ -10,11 +11,14 @@ export default class CfxUnresolvedIncidentsModule {
     }
 
     async retrieve(): Promise<CfxUnresolvedIncidents | undefined> {
-        const response = await axios.get(CFX_STATUS_UNRESOLVED, {
-            headers: { "User-Agent": "cfx" },
-        })
-        if (response.status !== 200)
-            throw new Error("Error while retrieving Cfx.re status")
-        return response.data
+        try {
+            const response = await axios.get(CFX_STATUS_UNRESOLVED, {
+                headers: { "User-Agent": "cfx" },
+            })
+
+            return new CfxUnresolvedIncidents(response.data)
+        } catch (error) {
+            throw new Error("Error while retrieving Cfx.re unresolved incidents")
+        }
     }
 }

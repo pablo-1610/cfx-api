@@ -17,10 +17,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.fetchUnresolvedIncidents = exports.fetchStatus = exports.fetchServer = void 0;
+exports.fetchPinnedServers = exports.fetchUnresolvedIncidents = exports.fetchStatus = exports.fetchServer = void 0;
 const CfxStatus_module_1 = __importDefault(require("./modules/CfxStatus.module"));
 const CfxCitizenServer_module_1 = __importDefault(require("./modules/CfxCitizenServer.module"));
 const CfxUnresolvedIncidents_module_1 = __importDefault(require("./modules/CfxUnresolvedIncidents.module"));
+const CfxPinnedServers_module_1 = __importDefault(require("./modules/CfxPinnedServers.module"));
 __exportStar(require("./types"), exports);
 async function fetchServer(id) {
     return await CfxCitizenServer_module_1.default.get().retrieve(id);
@@ -34,3 +35,7 @@ async function fetchUnresolvedIncidents() {
     return await CfxUnresolvedIncidents_module_1.default.get().retrieve();
 }
 exports.fetchUnresolvedIncidents = fetchUnresolvedIncidents;
+async function fetchPinnedServers() {
+    return await CfxPinnedServers_module_1.default.get().retrieve();
+}
+exports.fetchPinnedServers = fetchPinnedServers;

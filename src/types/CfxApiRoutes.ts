@@ -8,3 +8,5 @@ export const CFX_STATUS_COMPONENTS =
 
 export const CFX_STATUS_UNRESOLVED =
     "https://status.cfx.re/api/v2/incidents/unresolved.json"
+
+export const CFX_PINNED_SERVERS = "https://runtime.fivem.net/pins.json"
