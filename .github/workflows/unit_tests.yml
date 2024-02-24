@@ -1,0 +1,35 @@
+name: unit-tests
+
+on:
+    workflow_dispatch:
+    push:
+    pull_request:
+
+jobs:
+    check_lib_compilation:
+        runs-on: ubuntu-latest
+        steps:
+            -   name: Checkout
+                uses: actions/checkout@v3.3.0
+                with:
+                    fetch-depth: 0
+            
+            -   name: Install Dependencies
+                run: npm i --save
+
+            -   name: Compile Library
+                run: npm run compile
+
+    run_tests:
+        runs-on: ubuntu-latest
+        steps:
+            -   name: Checkout
+                uses: actions/checkout@v3.3.0
+                with:
+                    fetch-depth: 0
+            
+            -   name: Install Dependencies
+                run: npm i -D
+            
+            -   name: Execute Unit Tests
+                run: npm run test

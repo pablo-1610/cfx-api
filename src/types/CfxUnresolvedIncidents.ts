@@ -1,4 +1,4 @@
-declare interface CfxUnresolvedIncidentsPage {
+export interface CfxUnresolvedIncidentsPage {
     id: string
     name: string
     url: string
@@ -6,7 +6,7 @@ declare interface CfxUnresolvedIncidentsPage {
     updated_at: string
 }
 
-export interface CfxUnresolvedIncidents {
+export interface CfxUnresolvedIncidentsType {
     page: CfxUnresolvedIncidentsPage
     incidents: any[]
 }
