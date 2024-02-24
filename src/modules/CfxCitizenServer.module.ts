@@ -11,7 +11,6 @@ export default class CfxCitizenServerModule {
     }
 
     async retrieve(id: string): Promise<CfxCitizenServer | undefined> {
-        console.log(`${CFX_MASTERLIST}${id}`)
         try {
             const response = await axios.get(CFX_MASTERLIST + id, {
                 headers: { "User-Agent": "Mozilla" },
