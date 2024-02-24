@@ -1,4 +1,4 @@
-import { CfxPinnedServersResponse } from "src/types/CfxPinnedServers"
+import { CfxPinnedServersResponse } from "../types/CfxPinnedServers"
 
 export default class CfxPinnedServers {
     pinIfEmpty: boolean
