@@ -16,7 +16,7 @@ class CfxStatusModule {
     async retrieve() {
         try {
             const response = await axios_1.default.get(types_1.CFX_STATUS_SUMMARY, {
-                headers: { "User-Agent": "cfx" },
+                headers: { "User-Agent": "Mozilla" },
             });
             return new CfxStatus_1.default(response.data);
         }

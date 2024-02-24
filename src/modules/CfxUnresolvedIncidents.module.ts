@@ -13,7 +13,7 @@ export default class CfxUnresolvedIncidentsModule {
     async retrieve(): Promise<CfxUnresolvedIncidents | undefined> {
         try {
             const response = await axios.get(CFX_STATUS_UNRESOLVED, {
-                headers: { "User-Agent": "cfx" },
+                headers: { "User-Agent": "Mozilla" },
             })
 
             return new CfxUnresolvedIncidents(response.data)

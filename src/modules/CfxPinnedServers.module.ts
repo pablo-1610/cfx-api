@@ -13,7 +13,7 @@ export default class CfxPinnedServersModule {
     async retrieve(): Promise<CfxPinnedServers | undefined> {
         try {
             const response = await axios.get(CFX_PINNED_SERVERS, {
-                headers: { "User-Agent": "cfx" },
+                headers: { "User-Agent": "Mozilla" },
             })
 
             return new CfxPinnedServers(response.data)

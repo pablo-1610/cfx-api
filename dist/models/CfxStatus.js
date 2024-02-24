@@ -17,7 +17,7 @@ class CfxStatus {
     }
     async fetchComponents() {
         const response = await axios_1.default.get(types_1.CFX_STATUS_COMPONENTS, {
-            headers: { "User-Agent": "cfx" },
+            headers: { "User-Agent": "Mozilla" },
         });
         if (response.status !== 200)
             throw new Error("Cannot retrieve Cfx.re components status");

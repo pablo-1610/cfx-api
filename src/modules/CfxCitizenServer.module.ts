@@ -11,11 +11,11 @@ export default class CfxCitizenServerModule {
     }
 
     async retrieve(id: string): Promise<CfxCitizenServer | undefined> {
+        console.log(`${CFX_MASTERLIST}${id}`)
         try {
             const response = await axios.get(CFX_MASTERLIST + id, {
-                headers: { "User-Agent": "cfx" },
+                headers: { "User-Agent": "Mozilla" },
             })
-
             return new CfxCitizenServer(response.data)
         } catch (error) {
             throw new Error("Server not found or internal error occurred")

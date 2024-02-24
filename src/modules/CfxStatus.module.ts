@@ -13,7 +13,7 @@ export default class CfxStatusModule {
     async retrieve(): Promise<CfxStatus | undefined> {
         try {
             const response = await axios.get(CFX_STATUS_SUMMARY, {
-                headers: { "User-Agent": "cfx" },
+                headers: { "User-Agent": "Mozilla" },
             })
 
             return new CfxStatus(response.data)

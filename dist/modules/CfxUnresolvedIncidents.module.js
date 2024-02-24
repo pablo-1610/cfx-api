@@ -16,7 +16,7 @@ class CfxUnresolvedIncidentsModule {
     async retrieve() {
         try {
             const response = await axios_1.default.get(types_1.CFX_STATUS_UNRESOLVED, {
-                headers: { "User-Agent": "cfx" },
+                headers: { "User-Agent": "Mozilla" },
             });
             return new CfxUnresolvedIncidents_1.default(response.data);
         }

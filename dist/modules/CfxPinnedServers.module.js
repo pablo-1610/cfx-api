@@ -16,7 +16,7 @@ class CfxPinnedServersModule {
     async retrieve() {
         try {
             const response = await axios_1.default.get(types_1.CFX_PINNED_SERVERS, {
-                headers: { "User-Agent": "cfx" },
+                headers: { "User-Agent": "Mozilla" },
             });
             return new CfxPinnedServers_1.default(response.data);
         }

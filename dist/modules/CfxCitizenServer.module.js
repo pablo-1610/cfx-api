@@ -14,9 +14,10 @@ class CfxCitizenServerModule {
         return this.instance;
     }
     async retrieve(id) {
+        console.log(`${types_1.CFX_MASTERLIST}${id}`);
         try {
             const response = await axios_1.default.get(types_1.CFX_MASTERLIST + id, {
-                headers: { "User-Agent": "cfx" },
+                headers: { "User-Agent": "Mozilla" },
             });
             return new CfxCitizenServer_1.default(response.data);
         }
