@@ -2,6 +2,9 @@
 
 A package that helps you interacting with the Cfx.re, FiveM & RedM API.
 
+# Deprecation notice
+The Cfx.re API is now secured and is no longer accessible for public use.
+
 <img align="right" src="https://user-images.githubusercontent.com/42814853/180027603-514401ba-d6bb-425a-892c-0bc50bf38310.png" height=20% width=20%>
 
 <hr>
