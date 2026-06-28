@@ -1,6 +1,6 @@
 {
   "name": "cfx-api",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "JS/TS library to interact with the Cfx.re, FiveM and RedM APIs",
   "type": "commonjs",
   "main": "dist/index.js",
@@ -45,7 +45,7 @@
   "engines": {
     "node": ">=18"
   },
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "axios": "^1.18.1",
     "protobufjs": "^8.6.5"
