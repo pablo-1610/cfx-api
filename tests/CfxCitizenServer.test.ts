@@ -1,57 +1,41 @@
-import CfxCitizenServerModule from "../src/modules/CfxCitizenServer.module"
+import { servers, fetchServer } from "../src"
 import CitizenServer from "../src/models/CfxCitizenServer"
-import { fetchServer } from "../src"
 
-describe("Tests for CfxCitizenServer module", function() {
-    const instance = new CfxCitizenServerModule()
-    
-    test("Empty server ID must throw an error", async function() {
-        try {
-            await instance.retrieve("")
-        } catch(error) {
-            expect(error).toBeInstanceOf(Error)
-        }
-    })
-    
-    test("Invalid server ID must throw an error", async function() {
-        try {
-            await instance.retrieve("InvalidServerID")
-        } catch(error) {
-            expect(error).toBeInstanceOf(Error)
-        }
-    })
-    
-    test("Valid server ID must return a CitizenServer object", async function() {
-        try {
-            const server = await instance.retrieve("qkj43z")
-            expect(server).toBeInstanceOf(CitizenServer)
-        } catch(error) {
-            expect(error).toBeInstanceOf(Error)
-        }
+describe("Single server", function () {
+    jest.setTimeout(60000)
+
+    let discoveredId: string
+
+    beforeAll(async function () {
+        const list = await servers.all({ minPlayers: 1, limit: 1 })
+        discoveredId = list[0].id
     })
 
-    test("Empty server ID must throw an error", async function() {
-        try {
-            await fetchServer("")
-        } catch(error) {
-            expect(error).toBeInstanceOf(Error)
-        }
+    test("Empty server id rejects", async function () {
+        await expect(servers.single("")).rejects.toThrow()
     })
-    
-    test("Invalid server ID must throw an error", async function() {
-        try {
-            await fetchServer("InvalidServerID")
-        } catch(error) {
-            expect(error).toBeInstanceOf(Error)
-        }
+
+    test("Invalid server id rejects", async function () {
+        await expect(servers.single("this-id-does-not-exist")).rejects.toThrow()
     })
-    
-    test("Valid server ID must return a CitizenServer object", async function() {
-        try {
-            const server = await fetchServer("qkj43z")
-            expect(server).toBeInstanceOf(CitizenServer)
-        } catch(error) {
-            expect(error).toBeInstanceOf(Error)
-        }
+
+    test("A discovered server id resolves to a CitizenServer", async function () {
+        const server = await servers.single(discoveredId)
+        expect(server).toBeInstanceOf(CitizenServer)
+        expect(server!.id).toBe(discoveredId)
+        expect(typeof server!.hostname).toBe("string")
+        expect(Array.isArray(server!.players)).toBe(true)
+    })
+
+    test("fetchServer alias resolves to a CitizenServer", async function () {
+        const server = await fetchServer(discoveredId)
+        expect(server).toBeInstanceOf(CitizenServer)
+    })
+
+    test("Enriched helpers are consistent", async function () {
+        const server = await servers.single(discoveredId)
+        expect(server!.joinUrl).toBe(`https://cfx.re/join/${discoveredId}`)
+        expect(typeof server!.isFiveM).toBe("boolean")
+        expect(Array.isArray(server!.tags)).toBe(true)
     })
 })

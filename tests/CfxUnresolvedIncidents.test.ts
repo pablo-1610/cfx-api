@@ -1,30 +1,18 @@
-import CfxUnresolvedIncidentsModule from "../src/modules/CfxUnresolvedIncidents.module"
+import { status, fetchUnresolvedIncidents } from "../src"
 import CfxUnresolvedIncidents from "../src/models/CfxUnresolvedIncidents"
-import { fetchUnresolvedIncidents } from "../src"
 
-describe("Tests for CfxUnresolvedIncidents module", function () {
+describe("Cfx.re unresolved incidents", function () {
+    jest.setTimeout(30000)
 
-    test("Default behaviour of the CfxUnresolvedIncidents.retrieve function", async function () {
-        const instance = new CfxUnresolvedIncidentsModule()
-
-        try {
-            const unresolvedIncidents = await instance.retrieve()
-            expect(unresolvedIncidents).toBeInstanceOf(CfxUnresolvedIncidents)
-        } catch (error) {
-            // If there is a catch, it's mostly due to Cfx.re server
-            // because the route won't take any argument.
-            expect(error).toBeInstanceOf(Error)
-        }
+    test("status.unresolvedIncidents returns a CfxUnresolvedIncidents", async function () {
+        const result = await status.unresolvedIncidents()
+        expect(result).toBeInstanceOf(CfxUnresolvedIncidents)
+        expect(Array.isArray(result!.incidents)).toBe(true)
+        expect(result!.page).toBeDefined()
     })
 
-    test("Default behaviour of the fetchUnresolvedIncidents function", async function () {
-        try {
-            const unresolvedIncidents = await fetchUnresolvedIncidents()
-            expect(unresolvedIncidents).toBeInstanceOf(CfxUnresolvedIncidents)
-        } catch (error) {
-            // If there is a catch, it's mostly due to Cfx.re server
-            // because the route won't take any argument.
-            expect(error).toBeInstanceOf(Error)
-        }
+    test("fetchUnresolvedIncidents alias works", async function () {
+        const result = await fetchUnresolvedIncidents()
+        expect(result).toBeInstanceOf(CfxUnresolvedIncidents)
     })
 })

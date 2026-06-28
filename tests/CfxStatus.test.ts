@@ -1,30 +1,29 @@
-import CfxStatusModule from "../src/modules/CfxStatus.module"
+import { status, fetchStatus } from "../src"
 import CfxStatus from "../src/models/CfxStatus"
-import { fetchStatus } from "../src"
+import CfxStatusComponent from "../src/models/CfxStatusComponent"
 
-describe("Tests for CfxStatus module", function () {
+describe("Cfx.re status", function () {
+    jest.setTimeout(30000)
 
-    test("Default behaviour of the CfxStatus.retrieve function", async function () {
-
-        try {
-            const instance = new CfxStatusModule(),
-                status = await instance.retrieve()
-            expect(status).toBeInstanceOf(CfxStatus)
-        } catch (error) {
-            // If there is a catch, it's mostly due to Cfx.re server
-            // because the route won't take any argument.
-            expect(error).toBeInstanceOf(Error)
-        }
+    test("status.get returns a CfxStatus with a level", async function () {
+        const result = await status.get()
+        expect(result).toBeInstanceOf(CfxStatus)
+        expect(typeof result!.level).toBe("string")
+        expect(typeof result!.description).toBe("string")
+        expect(typeof result!.everythingOk).toBe("boolean")
     })
 
-    test("Default behaviour of the fetchStatus function", async function () {
-        try {
-            const status = await fetchStatus()
-            expect(status).toBeInstanceOf(CfxStatus)
-        } catch (error) {
-            // If there is a catch, it's mostly due to Cfx.re server
-            // because the route won't take any argument.
-            expect(error).toBeInstanceOf(Error)
-        }
+    test("fetchComponents returns status components", async function () {
+        const result = await status.get()
+        const components = await result!.fetchComponents()
+        expect(Array.isArray(components)).toBe(true)
+        expect(components.length).toBeGreaterThan(0)
+        expect(components[0]).toBeInstanceOf(CfxStatusComponent)
+        expect(typeof components[0].name).toBe("string")
+    })
+
+    test("fetchStatus alias works", async function () {
+        const result = await fetchStatus()
+        expect(result).toBeInstanceOf(CfxStatus)
     })
 })

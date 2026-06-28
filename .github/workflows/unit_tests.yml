@@ -10,12 +10,16 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             -   name: Checkout
-                uses: actions/checkout@v3.3.0
+                uses: actions/checkout@v4
+
+            -   name: Install Node
+                uses: actions/setup-node@v4
                 with:
-                    fetch-depth: 0
-            
+                    node-version: 20
+                    cache: npm
+
             -   name: Install Dependencies
-                run: npm i --save
+                run: npm ci
 
             -   name: Compile Library
                 run: npm run compile
@@ -24,12 +28,16 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             -   name: Checkout
-                uses: actions/checkout@v3.3.0
+                uses: actions/checkout@v4
+
+            -   name: Install Node
+                uses: actions/setup-node@v4
                 with:
-                    fetch-depth: 0
-            
+                    node-version: 20
+                    cache: npm
+
             -   name: Install Dependencies
-                run: npm i -D
-            
+                run: npm ci
+
             -   name: Execute Unit Tests
                 run: npm run test

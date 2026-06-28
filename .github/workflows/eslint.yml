@@ -8,16 +8,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Install Node
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v4
         with:
-          node-version: 16
+          node-version: 20
           cache: npm
 
       - name: Install ESLint
-        run: npm install
+        run: npm ci
 
       - name: Run ESLint
         run: npm run lint
