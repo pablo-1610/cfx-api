@@ -1,14 +1,28 @@
 {
   "name": "cfx-api",
-  "version": "1.2.31",
-  "descrption": "JS library to interact with the Cfx.re API",
+  "version": "2.0.0",
+  "description": "JS/TS library to interact with the Cfx.re, FiveM and RedM APIs",
+  "type": "commonjs",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
   "author": "PABLO-1610",
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "lint": "eslint . --ext .ts",
+    "lint": "eslint .",
     "compile": "tsc -p ./tsconfig.json",
     "watch": "tsc -w -p ./tsconfig.json",
-    "test": "jest"
+    "test": "jest",
+    "prepublishOnly": "npm run compile"
   },
   "keywords": [
     "fivem",
@@ -17,7 +31,9 @@
     "fivem-api",
     "cfx",
     "cfx-api",
-    "cfx.re"
+    "cfx.re",
+    "redm",
+    "server-list"
   ],
   "repository": {
     "type": "git",
@@ -26,18 +42,24 @@
   "bugs": {
     "url": "https://github.com/pablo-1610/cfx-api/issues"
   },
+  "engines": {
+    "node": ">=18"
+  },
   "license": "ISC",
   "dependencies": {
-    "axios": "^1.6.0"
+    "axios": "^1.18.1",
+    "protobufjs": "^8.6.5"
   },
   "devDependencies": {
-    "@types/jest": "^29.5.6",
-    "@types/node": "^20.8.9",
-    "@typescript-eslint/eslint-plugin": "^6.9.1",
-    "@typescript-eslint/parser": "^6.9.0",
-    "eslint": "^8.52.0",
-    "jest": "^29.7.0",
-    "ts-jest": "^29.1.1",
-    "typescript": "^5.2.2"
+    "@eslint/js": "^10.0.1",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^26.0.1",
+    "@typescript-eslint/eslint-plugin": "^8.62.0",
+    "@typescript-eslint/parser": "^8.62.0",
+    "eslint": "^10.6.0",
+    "jest": "^30.4.2",
+    "ts-jest": "^29.4.11",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.62.0"
   }
 }

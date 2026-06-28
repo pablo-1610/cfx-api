@@ -1,21 +1,14 @@
 {
-    "compilerOptions": {
-      "target": "ESNext",
-      "module": "CommonJS",
-      "declaration": true,
-      "sourceMap": false,
-      "outDir": "./dist",
-      "removeComments": true,
-      "strict": true,
-      "noImplicitAny": true,
-      "alwaysStrict": true,
-      "moduleResolution": "node",
-      "baseUrl": "./",
-      "esModuleInterop": true,
-      "forceConsistentCasingInFileNames": true,
-      "types": ["node", "jest"]
-    },
-    "include": ["src/**/*", "tests/*.test.ts"],
-    "exclude": ["node_modules", ".vscode", "dist"]
-  }
-  
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "module": "CommonJS",
+    "moduleResolution": "node10",
+    "ignoreDeprecations": "6.0",
+    "declaration": false,
+    "declarationMap": false,
+    "rootDir": "./",
+    "types": ["node", "jest"]
+  },
+  "include": ["src/**/*", "tests/**/*.ts"],
+  "exclude": ["node_modules", ".vscode", "dist"]
+}

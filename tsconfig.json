@@ -1,21 +1,22 @@
 {
   "compilerOptions": {
-    "target": "ESNext",
-    "module": "CommonJS",
+    "target": "es2022",
+    "lib": ["es2022"],
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
     "declaration": true,
+    "declarationMap": true,
     "sourceMap": false,
+    "rootDir": "./src",
     "outDir": "./dist",
     "removeComments": true,
     "strict": true,
     "noImplicitAny": true,
     "alwaysStrict": true,
-    "moduleResolution": "node",
-    "baseUrl": "./",
-    "esModuleInterop": true,
+    "isolatedModules": true,
+    "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "typeRoots": [
-      "src/types",
-    ],
+    "types": ["node"]
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules", ".vscode", "dist", "tests"]
