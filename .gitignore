@@ -1,4 +1,14 @@
-.idea/
 node_modules/
+dist/
+
+.idea/
+.vscode/
 *.iml
+
 .npmrc
+
+.DS_Store
+Thumbs.db
+*.log
+*.swp
+coverage/
