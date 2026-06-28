@@ -13,12 +13,12 @@ export default class CfxUnresolvedIncidentsModule {
     async retrieve(): Promise<CfxUnresolvedIncidents | undefined> {
         try {
             const response = await axios.get(CFX_STATUS_UNRESOLVED, {
-                headers: { "User-Agent": "Mozilla" },
+                headers: { "User-Agent": "Mozilla/5.0" },
             })
 
             return new CfxUnresolvedIncidents(response.data)
         } catch (error) {
-            throw new Error("Error while retrieving Cfx.re unresolved incidents")
+            throw new Error("Error while retrieving Cfx.re unresolved incidents", { cause: error })
         }
     }
 }

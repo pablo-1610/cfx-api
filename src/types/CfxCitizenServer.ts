@@ -1,11 +1,12 @@
 import { CfxCitizenPlayerPayload } from "./CfxCitizenPlayer"
 
 export interface CfxCitizenServerDataPublicVariables {
-    onesync_enabled: string
-    element_club: string
-    tags: string[]
-    sv_projectName: string
-    sv_projectDesc: string
+    onesync_enabled?: string
+    element_club?: string
+    tags?: string
+    sv_projectName?: string
+    sv_projectDesc?: string
+    [key: string]: string | undefined
 }
 
 export interface CfxCitizenServerDataData {

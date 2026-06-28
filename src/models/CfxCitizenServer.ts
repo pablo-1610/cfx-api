@@ -118,6 +118,9 @@ export default class CitizenServer {
             return []
         }
         return this.publicVariables.tags
+            .split(",")
+            .map((tag) => tag.trim())
+            .filter((tag) => tag.length > 0)
     }
 
     get projectName() {
@@ -130,6 +133,48 @@ export default class CitizenServer {
 
     get isFull() {
         return this.playersCount >= this.maxPlayers
+    }
+
+    get joinUrl() {
+        return `https://cfx.re/join/${this.id}`
+    }
+
+    get connectEndpoint() {
+        return this.connectedEndpoints?.[0]
+    }
+
+    get locale() {
+        return this.publicVariables.locale ?? undefined
+    }
+
+    get bannerConnecting() {
+        return this.publicVariables.banner_connecting ?? undefined
+    }
+
+    get bannerDetail() {
+        return this.publicVariables.banner_detail ?? undefined
+    }
+
+    get gameName() {
+        return this.publicVariables.gamename ?? undefined
+    }
+
+    get isRedM() {
+        return this.gameName === "rdr3"
+    }
+
+    get isFiveM() {
+        return this.gameName === "gta5"
+    }
+
+    get pureLevel() {
+        const level = this.publicVariables.sv_pureLevel
+        return level ? Number(level) : 0
+    }
+
+    get iconUrl() {
+        if (this.iconVersion === undefined) return undefined
+        return `https://frontend.cfx-services.net/api/servers/icon/${this.id}/${this.iconVersion}.png`
     }
 
     hasResource(resource: string) {

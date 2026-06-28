@@ -13,12 +13,12 @@ export default class CfxStatusModule {
     async retrieve(): Promise<CfxStatus | undefined> {
         try {
             const response = await axios.get(CFX_STATUS_SUMMARY, {
-                headers: { "User-Agent": "Mozilla" },
+                headers: { "User-Agent": "Mozilla/5.0" },
             })
 
             return new CfxStatus(response.data)
         } catch (error) {
-            throw new Error("Error while retrieving Cfx.re status")
+            throw new Error("Error while retrieving Cfx.re status", { cause: error })
         }
     }
 }

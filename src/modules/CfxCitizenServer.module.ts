@@ -1,4 +1,4 @@
-import { CFX_MASTERLIST } from "../types"
+import { CFX_SERVER_SINGLE } from "../types"
 import CfxCitizenServer from "../models/CfxCitizenServer"
 import axios from "axios"
 
@@ -12,12 +12,12 @@ export default class CfxCitizenServerModule {
 
     async retrieve(id: string): Promise<CfxCitizenServer | undefined> {
         try {
-            const response = await axios.get(CFX_MASTERLIST + id, {
-                headers: { "User-Agent": "Mozilla" },
+            const response = await axios.get(CFX_SERVER_SINGLE + id, {
+                headers: { "User-Agent": "Mozilla/5.0" },
             })
             return new CfxCitizenServer(response.data)
         } catch (error) {
-            throw new Error("Server not found or internal error occurred")
+            throw new Error("Server not found or internal error occurred", { cause: error })
         }
     }
 }

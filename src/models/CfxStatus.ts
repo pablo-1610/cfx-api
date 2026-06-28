@@ -3,6 +3,7 @@ import {
     CfxSummary,
     CFX_STATUS_COMPONENTS,
 } from "../types"
+import CfxStatusComponent from "./CfxStatusComponent"
 import axios from "axios"
 
 export default class CfxStatus {
@@ -18,12 +19,14 @@ export default class CfxStatus {
         return this.level === "none"
     }
 
-    async fetchComponents(): Promise<CfxStatusComponentData[]> {
+    async fetchComponents(): Promise<CfxStatusComponent[]> {
         const response = await axios.get(CFX_STATUS_COMPONENTS, {
-            headers: { "User-Agent": "Mozilla" },
+            headers: { "User-Agent": "Mozilla/5.0" },
         })
         if (response.status !== 200)
             throw new Error("Cannot retrieve Cfx.re components status")
-        return response.data.components
+        return (response.data.components as CfxStatusComponentData[]).map(
+            (component) => new CfxStatusComponent(component)
+        )
     }
 }
